@@ -1,0 +1,42 @@
+# Create your own game!
+
+# Spawn a player with spawnPlayerXY(type, x, y)
+game.spawnPlayerXY("samurai", 36, 13)
+"player".maxHealth = 1000
+"player".attackDamage = 200
+
+# Add at least one goal!
+game.addCollectGoal(7)
+game.addDefeatGoal()
+game.addSurviveGoal()
+game.addMoveGoalXY(59, 13)
+game.addMoveGoalXY(59, 27)
+game.addMoveGoalXY(43, 45)
+game.addMoveGoalXY(43, 61)
+game.addMoveGoalXY(29, 37)
+game.addMoveGoalXY(11, 41)
+game.addMoveGoalXY(11, 24)
+
+# Collect gems 
+game.spawnXY("gem", 59, 26)
+game.spawnXY("gem", 59, 12)
+game.spawnXY("gem", 11, 23)
+game.spawnXY("gem", 11, 40)
+game.spawnXY("gem", 29, 36)
+game.spawnXY("gem", 43, 60)
+game.spawnXY("gem", 43, 44)
+
+# Spawn objects into the game with spawnXY(type, x, y)
+game.spawnMaze("forest", 1)
+generator = game.spawnXY("generator", 60, 44)
+generator.spawnDelay = 5
+generator.spawnType = "munchkin"
+"munchkin".maxHealth = 500
+"munchkin".attackDamage = 100
+trap = game.spawnXY("fire-spewer", 36, 29)
+trap.direction = "horizontal"
+
+# Spawn boss
+game.spawnXY("skeleton", 28, 59)
+"skeleton".maxHealth = 2000
+"skeleton".attackDamage = 400
